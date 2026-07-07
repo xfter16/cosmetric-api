@@ -1,0 +1,41 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Brand {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  products    Product[]
+}
+
+model Product {
+  id          Int                 @id @default(autoincrement())
+  brandId     Int
+  name        String
+  description String?
+  brand       Brand               @relation(fields: [brandId], references: [id])
+  ingredients ProductIngredient[]
+}
+
+model Ingredient {
+  id          Int                 @id @default(autoincrement())
+  name        String
+  description String?
+  products    ProductIngredient[]
+}
+
+model ProductIngredient {
+  productId    Int
+  ingredientId Int
+  product      Product    @relation(fields: [productId], references: [id])
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+
+  @@id([productId, ingredientId])
+}
