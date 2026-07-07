@@ -7,3 +7,18 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Brand {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  products    Product[]
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  brandId     Int
+  name        String
+  description String?
+  brand       Brand   @relation(fields: [brandId], references: [id])
+}
