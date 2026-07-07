@@ -11,12 +11,12 @@ async function bootstrap() {
     .getOrThrow<Configuration>(CONFIGURATION_KEY);
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle(configuration.swagger.title)
-    .setDescription(configuration.swagger.description)
-    .setVersion(configuration.swagger.version)
+    .setTitle('API')
+    .setDescription('API documentation')
+    .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup(configuration.swagger.path, app, document);
+  SwaggerModule.setup('docs', app, document);
 
   await app.listen(configuration.port);
 }
