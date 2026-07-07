@@ -9,3 +9,4 @@
 | [#3](../../pull/3) | Swagger/OpenAPI документация и переход на pnpm | [pr-3-add-swagger.md](./pr-3-add-swagger.md) | 2026-07-07 |
 | [#4](../../pull/4) | Namespace Configuration с env и дефолтными значениями | [pr-4-configuration-namespace.md](./pr-4-configuration-namespace.md) | 2026-07-07 |
 | [#5](../../pull/5) | Prisma 7 с PostgreSQL и доменные модели | [pr-5-prisma-pg.md](./pr-5-prisma-pg.md) | 2026-07-07 |
+| [#8](../../pull/8) | Read-эндпоинты для брендов и продуктов | [pr-8-brands-products-read-endpoints.md](./pr-8-brands-products-read-endpoints.md) | 2026-07-07 |
