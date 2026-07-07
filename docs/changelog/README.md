@@ -10,4 +10,4 @@
 | [#4](../../pull/4) | Namespace Configuration с env и дефолтными значениями | [pr-4-configuration-namespace.md](./pr-4-configuration-namespace.md) | 2026-07-07 |
 | [#5](../../pull/5) | Prisma 7 с PostgreSQL и доменные модели | [pr-5-prisma-pg.md](./pr-5-prisma-pg.md) | 2026-07-07 |
 | [#8](../../pull/8) | Read-эндпоинты для брендов и продуктов | [pr-8-brands-products-read-endpoints.md](./pr-8-brands-products-read-endpoints.md) | 2026-07-07 |
-| — | Pug-страницы брендов и продуктов | [pr-pug-brands-view.md](./pr-pug-brands-view.md) | 2026-07-07 |
+| [#10](../../pull/10) | Pug-страницы брендов и продуктов | [pr-10-pug-brands-view.md](./pr-10-pug-brands-view.md) | 2026-07-07 |
