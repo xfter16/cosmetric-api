@@ -35,6 +35,18 @@ export class ProductsService {
     return products.map((x) => this.toDto(x));
   }
 
+  async findByBrandId(brandId: number): Promise<ProductResponseDto[]> {
+    await this.brandsService.findOne(brandId);
+
+    const products = await this.prisma.product.findMany({
+      where: { brandId },
+      ...productWithRelations,
+      orderBy: { id: 'asc' },
+    });
+
+    return products.map((x) => this.toDto(x));
+  }
+
   async findOne(id: number): Promise<ProductResponseDto> {
     const product = await this.prisma.product.findUnique({
       where: { id },

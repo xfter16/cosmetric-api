@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Бренды
+  if brands.length
+    table
+      thead
+        tr
+          th ID
+          th Название
+          th Описание
+          th
+      tbody
+        each brand in brands
+          tr
+            td= brand.id
+            td= brand.name
+            td= brand.description || '—'
+            td
+              a(href=`/view/brands/${brand.id}/products`) Продукты
+  else
+    p.muted Брендов пока нет.

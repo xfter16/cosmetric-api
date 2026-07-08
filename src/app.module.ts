@@ -5,9 +5,16 @@ import { BrandsModule } from './brands';
 import { ConfigurationModule } from './configuration';
 import { PrismaModule } from './prisma';
 import { ProductsModule } from './products';
+import { ViewsModule } from './views';
 
 @Module({
-  imports: [ConfigurationModule, PrismaModule, BrandsModule, ProductsModule],
+  imports: [
+    ConfigurationModule,
+    PrismaModule,
+    BrandsModule,
+    ProductsModule,
+    ViewsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
