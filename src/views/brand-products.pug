@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  p.back
+    a(href="/view/brands") ← К списку брендов
+  h1= brand.name
+  if brand.description
+    p= brand.description
+  h2 Продукты
+  if products.length
+    table
+      thead
+        tr
+          th ID
+          th Название
+          th Описание
+          th Ингредиенты
+      tbody
+        each product in products
+          tr
+            td= product.id
+            td= product.name
+            td= product.description || '—'
+            td
+              if product.ingredients.length
+                ul
+                  each ingredient in product.ingredients
+                    li= ingredient.name
+              else
+                | —
+  else
+    p.muted У этого бренда пока нет продуктов.
