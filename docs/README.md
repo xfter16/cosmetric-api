@@ -7,3 +7,4 @@
 | Раздел | Описание |
 |--------|----------|
 | [changelog](./changelog/README.md) | История изменений по мержам pull request'ов |
+| [spec](./spec/README.md) | Спецификации проекта |

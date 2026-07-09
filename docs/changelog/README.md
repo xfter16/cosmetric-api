@@ -12,3 +12,4 @@
 | [#8](../../pull/8) | Read-эндпоинты для брендов и продуктов | [pr-8-brands-products-read-endpoints.md](./pr-8-brands-products-read-endpoints.md) | 2026-07-07 |
 | [#10](../../pull/10) | Pug-страницы брендов и продуктов | [pr-10-pug-brands-view.md](./pr-10-pug-brands-view.md) | 2026-07-07 |
 | [#11](../../pull/11) | Dockerfile и Docker Compose для NestJS API | [pr-11-docker-setup.md](./pr-11-docker-setup.md) | 2026-07-08 |
+| [#12](../../pull/12) | Спецификации проекта (docs/spec) | [pr-12-project-spec-docs.md](./pr-12-project-spec-docs.md) | 2026-07-09 |
