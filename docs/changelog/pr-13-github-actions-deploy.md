@@ -12,9 +12,13 @@
 
 - `.github/workflows/deploy-develop.yml` — workflow с триггером `push` на `develop`, concurrency-группой и шагом деплоя через `appleboy/ssh-action`.
 
+### Docker Compose для production
+
+- `docker-compose.prod.yml` — только сервис `app`, без локального Postgres. `DATABASE_URL` и остальные переменные читаются из `.env` на сервере (удалённая БД Neon).
+
 ### Скрипт деплоя
 
-- `scripts/deploy-remote.sh` — обновление репозитория до `origin/develop`, `docker compose build --pull`, `docker compose up -d`, очистка неиспользуемых образов.
+- `scripts/deploy-remote.sh` — обновление репозитория до `origin/develop`, сборка и запуск через `docker-compose.prod.yml`, проверка наличия `.env`, очистка неиспользуемых образов.
 
 ### Настройка сервера и секретов
 
@@ -38,7 +42,9 @@
 git clone <repo-url> /opt/cosmetric-api
 cd /opt/cosmetric-api
 git checkout develop
-docker compose up -d
+cp .env.example .env
+# укажите DATABASE_URL от Neon в .env
+docker compose -f docker-compose.prod.yml up -d
 ```
 
-При необходимости production-переменные (`DATABASE_URL` и др.) задаются в `.env` на сервере или через override `docker-compose`.
+Локальный `docker-compose.yml` с Postgres остаётся для разработки. На сервере используется `docker-compose.prod.yml` с удалённой БД Neon.
