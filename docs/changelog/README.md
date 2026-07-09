@@ -13,3 +13,4 @@
 | [#10](../../pull/10) | Pug-страницы брендов и продуктов | [pr-10-pug-brands-view.md](./pr-10-pug-brands-view.md) | 2026-07-07 |
 | [#11](../../pull/11) | Dockerfile и Docker Compose для NestJS API | [pr-11-docker-setup.md](./pr-11-docker-setup.md) | 2026-07-08 |
 | [#12](../../pull/12) | Спецификации проекта (docs/spec) | [pr-12-project-spec-docs.md](./pr-12-project-spec-docs.md) | 2026-07-09 |
+| [#13](../../pull/13) | GitHub Actions: деплой на удалённый сервер при пуше в develop | [pr-13-github-actions-deploy.md](./pr-13-github-actions-deploy.md) | 2026-07-09 |
