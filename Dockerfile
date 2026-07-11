@@ -4,7 +4,7 @@ RUN corepack enable && corepack prepare pnpm@10.33.3 --activate
 FROM base AS builder
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 COPY prisma ./prisma
 COPY prisma.config.ts ./
 RUN pnpm prisma generate
@@ -15,7 +15,8 @@ FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod && pnpm add prisma@^7.8.0
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts \
+    && pnpm add prisma@^7.8.0
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/prisma.config.ts ./
